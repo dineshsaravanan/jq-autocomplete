@@ -1,0 +1,87 @@
+<html>
+<head>
+    <style>
+        li.selected {
+            background-color: WindowFrame;
+        }
+
+        .jq-mentions{
+            position:absolute;
+            top: 0;
+            left: 0;
+            display: none;
+            margin-top: 18px;
+            background: white;
+            border: 1px solid #DDD;
+            border-radius: 3px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            min-width: 120px;
+            z-index: 1030;
+        }
+        .jq-mentions .cur {
+            background: #3366FF;
+            color: white;
+        }
+        .jq-mentions .cur small {
+            color: white;
+        }
+        .jq-mentions strong {
+            color: #3366FF;
+        }
+        .jq-mentions .cur strong {
+            color: white;
+            font:bold;
+        }
+        .jq-mentions ul {
+            /* width: 100px; */
+            list-style:none;
+            padding:0;
+            margin:auto;
+        }
+        .jq-mentions ul li {
+            display: block;
+            padding: 5px 10px;
+            border-bottom: 1px solid #DDD;
+            cursor: pointer;
+        }
+        .jq-mentions small {
+            font-size: smaller;
+            color: #777;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+<div><input type="text"/></div>
+<script src="./lib/jquery.js" type="text/javascript"></script>
+<script src="./lib/underscore-min.js" type="text/javascript"></script>
+<script src="./jquery.mentions.js" type="text/javascript"></script>
+<script>
+    var inout = $("input");
+    inout.mentionsInput({
+        triggerChar: "@",
+        data: [
+            {name: "dinesh"},
+            {name: "dinesh test"},
+            {name: "zach"},
+            {name: "angie"},
+            {name: "sarmad"},
+            {name: "hitler"},
+            {name: "walter white"}
+        ]
+    });
+    inout.mentionsInput({
+        triggerChar: "/gift ",
+        data: [
+            {name: "dinesh"},
+            {name: "dinesh test"},
+            {name: "zach"},
+            {name: "angie"},
+            {name: "sarmad"},
+            {name: "hitler"},
+            {name: "walter white"}
+        ]
+    });
+</script>
+</body>
+</html>
